@@ -5,6 +5,7 @@ namespace Lackhurt\Apollo\Providers;
 use Illuminate\Support\ServiceProvider;
 use Lackhurt\Apollo\ConfigReader;
 use Lackhurt\Apollo\Console\Commands\StartApolloAgent;
+use Lackhurt\Apollo\Console\Commands\StartMmkkApolloAgent;
 
 class ApolloServiceProvider extends ServiceProvider
 {
@@ -32,7 +33,8 @@ class ApolloServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                StartApolloAgent::class
+                StartApolloAgent::class,
+                StartMmkkApolloAgent::class
             ]);
         }
     }
